@@ -36,3 +36,18 @@ public:
     //virtual void printTab(std::string filename) = 0;
     virtual void clrTab() = 0;
 };
+
+template<typename TKey, typename TVal>
+std::ostream& operator<<(std::ostream& os, Table<TKey, TVal>& tab)
+{
+    tab.Reset();
+  
+    while (!tab.IsEnd())
+    {
+        os << "Ключ: " << tab.getCurrKey() << ", Значение: " << tab.getCurrVal() << '\n';
+        tab.GoNext();
+    }
+    return os;
+}
+
+

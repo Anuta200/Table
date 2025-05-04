@@ -150,5 +150,24 @@ public:
         return false;
     }
 
-   
+    void PrintTable(ostream& os = cout) const {
+        
+        for (int i = 0; i < this->size; ++i) {
+            os << "[" << i << "]: ";
+            if (this->pList[i].empty()) {
+                os << "Empty\n";
+            }
+            else {
+                for (const auto& rec : this->pList[i]) {
+                    os << "(" << rec.key << ", " << rec.val << ") -> ";
+                }
+                os << "nullptr\n";
+            }
+        }
+    }
+
+
 };
+
+
+

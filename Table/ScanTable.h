@@ -89,3 +89,4 @@ public:
     TVal getCurrVal() override { return this->pRec[this->Curr].val; }
 
 };
+
